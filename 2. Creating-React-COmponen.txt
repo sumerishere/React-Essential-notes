@@ -1,0 +1,123 @@
+           //----------- Creating React COmponenets -------------//
+
+
+1. File Extensions.
+   - .JS (JavaScript) --> (for javaScript code and used for general logic).
+   - .JSX (JavaScript XML) --> (Combines JS with HTML-like tags)
+       - Makes it easier to design UI COmponents.
+       - Describe what the UI should look like.
+
+-----------------------------------------------------------------------------
+
+2. Class vs Function Componenets.
+
+   1. Class Components:
+      - Stateful: Can manage state.
+      - Lifecycle: Access to lifecycle, methods.
+      - Verbose: More boilerplate code.
+      - Not Preferred anymore.
+  
+   2. Functional Components:
+      - Initially stateless.
+      - Can use Hooks for state and effects.
+      - Simpler and more concise.
+      - More Popular.
+
+ *note : they differ in terms of syntax, features, and how state 
+          and lifecycle methods are handled.
+
+  ## Choosing Between Class and Function Components:
+    1. Prior to React "16.8 version":
+     - Class components were the primary way of creating components with        
+        state and lifecycle methods.
+
+    2. With React "16.8 version" and Hooks:
+     - Function components with Hooks provide a more concise and expressive  
+        way to manage state and side effects.
+     - Hooks have made it possible to use state and lifecycle features in 
+        function components, reducing the need for class components.
+ 
+    Recommendation:
+      For new projects, using function components with Hooks is recommended,   
+      as it represents the modern approach and has become the standard in   
+      React development.
+
+ Overall :
+      Keep in mind that both class components and function components with   
+      Hooks are valid and can coexist in a single React application. The  
+      choice between them often depends on the project's requirements, team   
+      preferences, and the React version in use.
+
+
+-----------------------------------------------------------------------------
+
+3. What is JSX.
+   - Not HTML: Though it resembles HTML, you're actually writing JSX, which
+     stands for JavaScript XML.
+
+   - Conversion: JSX gets converted to regular JS.
+
+   - Babeljs.io/repl is tool that allows you to see how JSX is transformed
+     into JavaScript.
+------------------------------------------------------------------------------
+
+4. Exporting components.
+    - Enables the use of component in other parts.
+    - Default Export: Allows exporting a single component as the default 
+      from a module.
+    - Named Export: Allows exporting multiple items from module.
+    - Importing: To use an exported component, you need to import it in the    
+      destination file using import syntax.
+
+  - 1. one default export. --> single default component
+  - 2. multiple named export. -->  multiple exporting of components.
+  - 3. named export and one default. --> mixed exporting 
+                                         components(1 default + named comp).
+
+----------------------------------------------------------------------------------
+
+5. Other important Points.
+   1. Naming of Components: Must be capitalized
+      - lowercase for default HTML.
+
+   2. HTML: unlike vanilla JS where u can't directly write HTML, in react u 
+            can embed HTML-like syntax using JSX.
+  
+   3. CSS: In react, CSS can be directly imported into component files, allowing
+           for modular and component-specfic styling.
+           eg: like avoid to use link tag for css file.
+
+---------------------------------------------------------------------------------
+
+6. Dynamic COmponents.
+   1. Dynamic Content: 
+      - JSX allows the creation of dynamic and interactive UI components.
+
+   2. JS Expression: 
+      - Using {}, we can embed any JS expression directly within JSX. This includes
+        variable, function calls, and more.
+      
+  *NOte : In JS, we need to use backtic like this `${}` to write JS expression
+              in HTML code. but now there is no need of backtic and $ symbol
+             we can write JS Expression directly in {} brackets.
+
+----------------------------------------------------------------------------------
+
+7. Resusable Components.
+   1. MOdularity: 
+      - Components are modular, allowing for easy reuse across diff parts of 
+        an application.
+
+   2. COnsistency:
+      - Reusing components esures UI consistency and reduces the chance of  
+        discrepancies(inconsistency or lack of compatibility).
+   
+   3. Efficiency: Reduces development time and effort by avoiding duplication of  
+                  code.
+
+   4. Maintainability:
+      - Changes made to a reused component reflect everywhere it's used,  
+        simplyfying update and bug fixes.   
+
+
+
