@@ -1,0 +1,22 @@
+                 //-------------- Including Bootstrap ---------------// 
+
+
+1. Responsive:
+   - Mobile-first design for all device sizes.
+   
+2. Components:
+   - Pre-styled elements like buttons and navbars.
+  
+3. Customizable:
+   - Modify default styles as needed.
+ 
+4. Cross-Browser:
+   - Consistent look across browsers.
+
+5. Open-Source:
+   - Free with community support.
+
+-installation:
+     - npm i(or install) bootstrap@5.3.2 
+   - import "bootstrap/dist/css/bootstrap.min.css";
+
