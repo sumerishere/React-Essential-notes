@@ -1,0 +1,22 @@
+           //--------------- Fragments in React -----------------//
+
+1. What is fragments in react ?
+   - Allows grouping of multiple elements without extra DOM nodes.
+  
+
+2. Why fragments ?
+   - Return multiple elements without a wrapping parent.
+   - Clear DOM and consistent styling.
+ 
+
+--> Fragments are particularly useful when you don't want to add 
+    unnecessary wrapper elements but still need to group multiple elements together.
+
+--> Prior to the introduction of fragments, developers often used div elements as   
+    wrappers, even when they weren't semantically necessary. Fragments allow you 
+    to achieve the same grouping effect without introducing a new node in the DOM.
+
+Syntax : 
+           <React.Fragment> ... </React.Fragment>
+                       oR
+            in short : <>... </>
