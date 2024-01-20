@@ -1,0 +1,64 @@
+               //------------ COnditional Rendering ---------------//
+
+
+1. COnditional Rendering:
+   - Displaying content based on certain condition.
+   - Allows for dynamic user interface.
+
+2. Methods:
+   - if-else statements : Choose betwn two blocks of content.
+   - Ternary operators : Quick way to choose betwn two options.
+   - LOgical operators : UseFul for rendering content when a conditon in true.
+
+3. BeNefits: 
+   - Enhance user experience.
+   - Reduces unnecessary rendering.
+   - reducing extra acceptancy of DOM.
+   - Avoid whole pge rendering dependency on condition-based then the components 
+     play crucial role.
+   - Makes apps more ineractive and responsive.
+
+syntax:
+
+    { condtion && <div> Write something</div> }
+
+    { !condition ? <div> Error do it again </div> :
+                           <div> Congratulations </div> } 
+
+
+  examples :
+
+     1. if-statemets:     
+
+            import React from 'react';
+
+	    function ConditionalRenderingExample({ isLoggedIn }) {
+
+ 	       if (isLoggedIn) {
+    		 return <p>Welcome, User!</p>;
+  	       }else {
+    		 return <p>Please log in.</p>;
+  	       }
+
+	     }
+
+       	     export default ConditionalRenderingExample;
+
+
+      2. Ternary Operators :
+
+           import React from 'react';
+
+	   function ConditionalRenderingExample({ isLoggedIn }) {
+  	      return isLoggedIn ? <p>Welcome, User!</p> : <p>Please log in.</p>;
+	   }
+
+	   export default ConditionalRenderingExample;
+
+
+
+
+
+
+
+
