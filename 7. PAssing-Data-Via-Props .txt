@@ -1,0 +1,88 @@
+                  // ---------- PAssing Data Via Props ----------- //
+                              Props (short for properties)
+
+1.Props in React:
+  - Props (Short for properties).
+  - Mechanism for passing data.
+  - Read-only by default.
+  
+2.Usage:
+  - Pass data from parent to child component.
+  - Makes Components resuable.
+  - Defined as attribute in Jsx.
+  
+3.Key Points:
+  - Data flows one-way (downwards).
+  - Props are immutable.
+  - Used for communication betwn components.
+  - A separation of logic would be better for complex projects.
+
+
+Overalll:
+
+   - Props are used to transmit information, configurations, or functions from a 
+     higher-level component to a lower-level component in the component tree.
+   - They are essentially arguments that are passed to React components as attributes. 
+     Props are read-only and should not be modified by the child component.
+   - Props are part of React's component-based architecture.
+
+  -----------------------------------------------------------------------------------------
+
+4.Examples:
+
+     <Header title = "My App"/>
+     - props are like an attributes of HTML input tag.
+       eg: type="text", placeholder="enter here" etc.
+  
+ --> Props (short for properties) are a way to pass data from a parent component 
+     to a child component in React. Here's a basic example of how you can pass 
+     data via props:
+
+           
+  **props in parent-child relationships.     
+              ________
+              |parent|
+                /   \
+       (props) /     \ (props)
+              /       \
+          _______   _______
+          |child|   |child| 
+            /           \
+    (props)/             \ (props)
+          /               \
+    _____________       _____________
+    |grand child|      | grand child|
+    -------------      --------------
+
+
+ cOde Snippet :
+
+       1. Parent component:
+
+                import React from 'react';
+		import ChildComponent from './ChildComponent';
+
+		function ParentComponent() {
+ 		   const message = 'Hello from the Parent!';
+
+ 		   return (
+   		     <div>
+     		       <h1>{message}</h1>
+     		         <ChildComponent message={message} />
+    		     </div>
+  		   );
+	         }
+
+	         export default ParentComponent;
+
+
+      2. Child Components:
+
+       		import React from 'react';
+	
+		function ChildComponent(props) {
+  		     return <p>{props.message}</p>;
+		}
+
+		export default ChildComponent;
+
