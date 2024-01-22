@@ -1,0 +1,28 @@
+                       //------------------ CSS Modules --------------------//
+                                  (Organized and Maintainable Codebase)
+
+
+ Flow of Css Modules :
+    
+       *normal css*                                                 *css module*
+       __________________        _______________    unique id       ____________________
+       |_____Cat.css____|        | CSS-modules |    --------->      |______CSS_________|
+       | .meow {        |        |  compiler   |    --------->      | .cat_meow_j3xk{  |
+       |   color: white;|        ---------------                    |   color : white; |
+       | }              |                                           | }                |
+       ------------------                                           --------------------
+ 
+
+
+
+1. Localized class names to avoid global conflict.
+
+2. Styles are scoped to individual components with unique ids.
+
+3. Helps in creating components-specfic styles.
+
+4. Automatically generates unique class name.
+
+5. Promotes modular and maintainable CSS.
+
+6. Can use alongside global CSS when needed.
