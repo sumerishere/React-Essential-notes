@@ -1,0 +1,99 @@
+            //---------------------- PasSing Children ----------------------//
+                                  (or passing component)
+
+
+
+
+1. Children is a special prop for passing elements into components.
+
+2. Used for flexible and reusable components designs.
+
+3. Accessed with (props.children).
+
+4. Commmon in layout or container components.
+
+5. Can be any content: strings, numbers, JSX, or components.
+
+6. Enhances component composability  and reusability.
+
+
+--> In React, you can pass content (children) to a component by placing it between the opening  
+    and closing tags of the component. The content will then be accessible within the component 
+    as the children prop. This is often used to create reusable components that can wrap around  
+    other content.
+
+--> In props, we it pass as attribute to components to make changes itself or to make some
+    operation by taking some props value as attribute.
+
+ But,
+   - now the thing is, passing children is bit different compared to props if we see How?
+    
+   - we pass props as attribute in component tag but, in passing children we decleared 
+     children in opening/closing tag of component instead using it in sigle tag like props.
+     which mean the component doesn't care about passing children what it should be 
+     it could be anything like complex structure or somthing diff for rendering component
+     doesn't care of it.  --> kind of abstraction we can say for components. 
+   
+*note : passing children nothing but the passing one component to another component.
+
+   short example :
+                       
+                     1. // ParentComponent.js
+
+			import React from 'react';
+
+			function ParentComponent({ children }) {
+  			    return (
+   				<div>
+				   <h2>This is the parent component</h2>
+      				   {children}
+    				</div>
+  			    );
+			 }
+
+			export default ParentComponent;
+
+                             |
+                            _|_     
+                            \_/       
+
+              2. // AnotherComponent.js
+
+		import React from 'react';
+		import ParentComponent from './ParentComponent';
+
+		function AnotherComponent() {
+ 		    return (
+    		      <ParentComponent>
+      		         <p>This is the content passed as children</p>
+      			 <button>Click me</button>
+    		      </ParentComponent>
+  		   );
+  		}
+
+		export default AnotherComponent;
+
+
+ In this example:
+   
+   - The ParentComponent receives the content between its opening and closing tags as the  
+     children prop.
+   - The AnotherComponent uses ParentComponent and places a paragraph and a button inside it.
+   - The content passed between the tags of ParentComponent is rendered inside the div.
+
+
+Overall : 
+     The children prop can be any valid React node, including text, components, or even  
+     complex structures. It allows for the creation of flexible and reusable components 
+     that can wrap around different content.
+
+
+
+
+
+
+
+
+
+
+
