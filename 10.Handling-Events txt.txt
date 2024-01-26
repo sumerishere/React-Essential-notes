@@ -1,0 +1,32 @@
+                    //--------------- Handling Events ---------------//
+
+
+
+                                       ________________                   
+ _______________         Build         |              |       Build           ____________
+ |             |    -------------->    |   Virtual    |  -------------->      |          |
+ | Application |    <---------------   |     DOM      |  <---------------     |   DOM    |
+ |_____________|     Events delivery   |______________|  Events delivery      |__________|
+                                           
+
+                                  
+
+--> Handling events in React involves attaching event handlers to elements and defining  
+   functions to respond to those events. React follows a synthetic event system that wraps  
+   the native browser events and provides a consistent interface across different browsers.
+
+
+Key Points:
+
+ 1. React events use camelCase, e.g: onClick().
+
+ 2. Uses synthetic events, not direct browser events.
+
+ 3. Events handlers can be functions or arrow functions.
+
+ 4. Use onChange for controlled form inputs.
+    - we can get specific target value typed by user through input.
+      eg: event.target.value.
+    - react create synthetic object which contains all details of event happen. 
+
+ 5. Avoid inline arrow functions in JSX for performance.
