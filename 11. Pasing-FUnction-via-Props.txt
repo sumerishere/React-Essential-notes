@@ -1,0 +1,78 @@
+             //--------------- Pasing FUnction via Props ----------------//
+
+
+
+ 
+ --> emitting events typically refers to a pattern where a child component communicates 
+    with its parent component by triggering an event. This pattern is commonly used when a 
+    child component needs to inform its parent about changes or events that occur within 
+    the child component.                          
+
+
+                                   __________
+                                   | Parent |
+                                   |________|
+                                     _
+                                    /_\   |
+                                     |    |
+                       (Emit Events) |    | (pass Props)
+                         informing   |    |    
+                         to parent   |   \_/
+                                    _________
+                                    | Child |  
+                                    |_______|  via target elemnt
+
+                                      
+
+   1. Pass dynamic behaviour between components.
+
+   2. Enables upward communication from child to parent.
+
+   3. Commonly used for event handling.
+
+   4. Parent defines a function, child invokes it.
+
+   5. Enhance components interactivity.
+
+   6. Example : <Button onClick = {handleClick} />
+     - {handleClick} method passed from parent to child for acting according to that  
+        method. 
+
+
+
+ *Why Emit Events? :
+   - Communication between Components (parent-child).
+   - Decoupling of Components mean emitting event to inform parent when somthing happen.
+   
+
+ *How to Emit Events? 
+
+  1. Define Custom Events: 
+      
+      First, you define custom events that child components can emit. These events can 
+      be any meaningful action or change that needs to be communicated to the parent   
+      component.
+
+  1. Handle Events in Parent Component: 
+       
+      Next, you define event handler functions in the parent component to respond to 
+      these custom events. These event handlers are passed as props to child components.
+
+  2. Emit Events in Child Component: 
+
+      when something significant happens in the child component, such as a button click 
+      or form submission, the child component emits the custom event, which is then  	    
+      captured by the parent component's event handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
