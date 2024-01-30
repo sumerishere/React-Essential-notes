@@ -1,0 +1,350 @@
+       // ---------------- Managing States in React -------------------//
+
+
+
+
+--> Why is State Management Important?
+
+    - Before we dive into the best practices, let’s quickly recap why state management 
+      is crucial in React JS. State represents the data that changes over time in your  
+      application, and properly managing it ensures your app functions correctly.
+
+    - It helps you avoid common pitfalls like data inconsistency, prop drilling, and  
+      unnecessary re-renders. By following these best practices, you’ll make your app 
+      more maintainable, scalable, and performant.
+
+    - Use state to manage data that changes over time within a component.
+    - Use state to track user input, toggle UI elements, or manage component-specific data.
+
+
+ TYPES OF STATE IN React :
+
+  1. Local STate:
+     - Local state refers to state that is managed within a single component.           It 
+       it is used to store data that is relevant only to that component and does 
+       not need to be shared with other components in the application.
+
+   Characteristics:
+     - Scoped to a specific component.
+     - Managed using hooks (useState hook in functional components or this.state)
+        in class components.
+     - Typically used for UI-related state and component-specific data.
+
+   Use Cases:
+     - Managing form inputs and user interactions within a component.
+     - Toggling visibility of UI elements.
+     - Storing data fetched from an API for rendering within a component.
+
+
+  2. Global STate:
+     - Global state refers to state that needs to be shared across multiple components 
+       in an application. It allows components that are not directly related by 
+       parent-child relationships to share and synchronize data.
+
+   Characteristics:
+    - Shared among multiple components across the application.
+    - Managed using external state management libraries like Redux, React Context API, 
+      or custom solutions.
+   - Helps avoid prop drilling (passing props down through multiple levels of components).
+
+   Use Cases:
+    - Authentication status of the user.
+    - Theme settings (e.g., dark mode).
+    - Cart items in an e-commerce application.
+    - Application-level configuration settings.
+
+
+ Choosing Between Local and Global State:
+  
+   - Local State: Use local state when the state is specific to a single component and 
+     does not need to be accessed or modified by other components.
+
+   - Global State: Use global state when the state needs to be shared across multiple 
+     components or when the state is critical to the application's behavior and needs 
+     to be managed centrally.
+
+
+
+      -------------------------------------------------------------------------------
+
+       
+                        - Understand React’s Local Component State -
+ 
+                               ____________________________
+                               |__________STate____________|
+
+                                / \                        |
+                                 |                         |  (defines)
+                      (contains) |                         | 
+                            _____|_____               ____\_/_____
+                            |__Store___|              |____UI____|  
+                                 _
+                                / \                         |
+                                 |                          | (Triggers)                
+                      (Updates)  |                          | 
+                          _______|______              _____\_/______
+                          |__Reducer___|  <---------  |__Actions___|     
+                                           (Sent to)
+
+     
+
+  - In React, state is managed within components using the useState or useReducer hooks. 
+    It’s essential to understand the local component state and how it differs from global 
+    state management libraries like Redux or MobX.
+
+  - Local state should be used for data that is specific to a single component and doesn’t 
+    need to be shared across the entire application. For complex apps with multiple 
+    components, consider using a global state management solution.
+      
+        
+ -----------------------------------------------------------------------------------------
+
+ Examlpes of useState() hook using functional component and class component: 
+
+   
+ #1. Here's a basic example demonstrating how to use useState() in a functional component:
+   
+       import React, { useState } from 'react';
+
+       function Counter() {
+
+  	  // Declare a state variable 'count' initialized with 0
+  	  const [count, setCount] = useState(0);   //setCount is state function. 
+
+
+ 	  // Event handler to increment the count
+ 	  const increment = () => {
+  	     setCount(count + 1); // Update the 'count' state
+  	  };
+
+  	  return (
+    	     <div>
+     	 	<h2>Counter: {count}</h2>
+      		<button onClick={increment}>Increment</button>
+    	    </div>
+  	  );
+        }
+
+	export default Counter;
+
+
+  ------------------------------------------------------------------------
+
+
+  #2. Here's a simple example of a class component :
+
+        
+      import React, { Component } from 'react';
+
+      class MyClassComponent extends Component {
+
+  	   constructor(props) {
+
+    	      super(props);
+    	      this.state = {
+      	         count: 0
+    	      };
+  	   }
+
+  	incrementCount = () => {
+    	     this.setState({ count: this.state.count + 1 });
+  	};
+
+  	render() {
+    	   return (
+      	     <div>
+        	<h2>Count: {this.state.count}</h2>
+        	<button onClick={this.incrementCount}>Increment</button>
+      	     </div>
+    	   );
+        }
+      }
+
+      export default MyClassComponent;
+
+     
+  both examples are same using funtional and class component.
+
+
+ ----------------------------------------------------------------------------------------
+                            keY Points on Managing State 
+ ----------------------------------------------------------------------------------------
+
+
+   1. State represents data that changes over time.
+
+   2. State is local and private to the component.
+
+   3. State changes cause the component to re-render.
+
+   4. For functional components, use the useState hook.
+
+   5. React Functions that start with word use are called hooks.
+
+   6. Hooks should only be used inside components.
+
+   7. Parent components can pass state down to children via props.
+
+   8. Lifting state up: 
+      - share state between components by moving it to their closest common 
+        ancestor (parent).
+
+      - This pattern is used to share state between multiple components that are not  
+        directly related in the component tree.
+      - It makes easier to manage and update the state.
+
+
+  ---------------------------------------------------------------------------------------
+
+                                    HOOKS in React ?
+
+  ---------------------------------------------------------------------------------------
+
+
+  - what are hooks in react ?
+
+ --> In React, hooks are functions that enable functional components to use state,  
+     lifecycle methods, and other React features that were previously available only in 
+     class components. Hooks were introduced in React 16.8 as a way to write more reusable 
+     and expressive code in functional components.
+
+
+  - Why Hooks?
+
+ -->  Before hooks, functional components were limited in their capabilities. They were 
+     primarily used for presenting UI, while class components were required for managing  
+     state and lifecycle methods. Hooks provide a way to use state and other React 
+     features without writing class components, simplifying code and promoting reuse.
+
+
+   Quick Quesion:  Can I use hooks in class components ? 
+  
+        ANS : NO ('_')
+
+   Explaination :
+
+     - you cannot use hooks directly within class components in React. Hooks are specific 
+       to functional components and are not compatible with class components.
+
+     - Hooks were introduced in React 16.8 as a way to add stateful logic and other React 
+       features to functional components without using class components. They provide a 
+       more concise and expressive way to manage state, perform side effects, and consume        
+       React features.
+
+     1.Hooks are Functions: 
+       - Hooks are JavaScript functions that rely on the component's  
+         call order to maintain state and perform actions. Class components, on the other  
+         hand, rely on class inheritance and lifecycle methods.
+
+     2.Call Order Dependency: 
+       - Hooks have a strict call order dependency, meaning they must be called in the 
+         same order on every render. Class components have a different lifecycle and 
+         do not adhere to this call order.
+
+     3.Scope and Closure: 
+       - Hooks rely on closures and lexical scope to maintain state and reference
+         variables. Class components use the this keyword and instance properties  
+         to manage state and lifecycle methods.
+
+
+
+  ComMonly Used Hooks:
+
+   1. useState():
+        - Allows functional components to manage state.
+        - Returns a stateful value and a function to update it.
+      
+        Example: const [count, setCount] = useState(0);
+
+   2. useEffect():
+       - Allows performing side effects in functional components.
+       - Similar to componentDidMount, componentDidUpdate, and componentWillUnmount  
+         lifecycle methods in class components.
+
+       Example : 
+                useEffect(() => {
+
+	  	  // Effect code here
+
+  		   return () => {
+		    // Cleanup code here
+  		   };
+
+		}, [dependency]);
+
+         
+
+   3. useContext():
+      - Allows functional components to consume context.
+      - Provides a way to access values from a context provider up the component tree.
+
+      Example: const value = useContext(MyContext);
+
+   4. useReducer():
+       - Provides an alternative to useState() for managing complex state logic.
+       - Takes a reducer function and an initial state as arguments.
+
+       Example: const [state, dispatch] = useReducer(reducer, initialState);
+
+   5. useRef():
+       - Returns a mutable ref object whose .current property is initialized to the passed  
+         argument.
+       - Can be used to access DOM nodes or to persist values between renders.
+
+       Example: const inputRef = useRef();
+
+
+  BENEFITS of Hooks:
+
+   - Simpler Code: Hooks enable writing functional components that can use state and   
+     lifecycle methods without needing class components.
+
+   - Code Reusability: Hooks promote code reuse by allowing logic to be encapsulated and     
+     shared across components.
+
+   - Better Performance: Hooks encourage better performance optimizations by enabling the 
+     use of React's memoization techniques.
+
+
+  Example code using useState() and useEffect() hooks :
+
+     
+
+	import React, { useState, useEffect } from 'react';
+
+	function MyComponent() {
+  	  const [count, setCount] = useState(0);
+
+  	  useEffect(() => {
+    	    document.title = `You clicked ${count} times`;
+  	  }, [count]);
+
+	  return (
+            <div>
+               <p>You clicked {count} times</p>
+               <button onClick={() => setCount(count + 1)}>
+                 Click me
+               </button>
+            </div>
+      	  );
+        }
+
+	export default MyComponent;
+
+
+  In this example, useState() is used to manage the count state, and useEffect() is used 
+  to update the document title whenever the count changes. These hooks allow us to write  
+  stateful and effectful logic in a functional component without needing a class component.
+
+
+
+------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
