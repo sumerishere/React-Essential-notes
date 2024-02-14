@@ -1,0 +1,55 @@
+                  //------------- State Vs Props in React -------------//
+
+
+
+  1. State :
+
+      - Local mutable data within a component.
+      - Initialized within the component.
+      - Can change over time.
+      - Causes re-render when updated.
+      - Managed using useState in functional components.
+
+  2. Props : 
+  
+      - Passed into a component from its parent.
+      - Read-only (immutable) within the receiving component.
+      - Allow parent-to-child component communication.
+      - Changes in props can also cause a re-render.
+
+
+------------------------------------------------------------------------------------------
+
+                       //-------REact - Icon Library -------//
+
+
+  1. You can use a lot of icons without managing them.
+
+  2. install Package:
+     - npm i react-icons -save
+  
+  3. Use icon:
+     - import {IconName} from "react-icons/fc";
+
+-------------------------------------------------------------------------------------------
+
+
+                     //----- React - Dev - Tools --------//
+
+
+   1. Inspection: Allows inspection of React component hierarchies.
+   2. State & Props: View and edit the current state and props of components.
+   3. Performance: Analyze component re- renders and performance bottleneck.
+   4. Navigationn: COnveniently navigate through the entire component tree.
+   5. Filtering: Filter components by name or source to locate them quickly.
+   6. Real-time Feedack: See live changes as you modify state or props.
+
+
+
+
+
+
+
+
+
+

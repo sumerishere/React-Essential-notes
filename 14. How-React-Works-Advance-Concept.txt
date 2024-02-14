@@ -1,0 +1,94 @@
+                       //----------- How React Works ------------//
+
+
+
+1. Root Component:
+   - The App is the main or root component of a React application. 
+   - It's the starting point of your React component tree.
+
+2. Virtual(React) DOM:
+   - React creates an in-memory structure called the virtual DOM.
+   - Different from the actual browser DOM.
+   - It's a lightweight representation where each node stands for a component and its  
+     attributes.
+ 
+  eg: 
+      Real_DOM : your final page HTML tags structure is real or browser DOM.
+
+      Virtual_DOM: your react components hierarchy nothing but Virtual DON.
+
+
+
+3. Rendering Phase:
+   - When a component's state or props change, React triggers a re-render.
+   - During the re-render, React constructs a new virtual DOM tree that represents the updated   
+     state of the components and elements in the application.
+
+
+4. Reconciliation Process:
+   - When component data changes, React updates the virtual DOM's state to mirror these  
+     changes.
+   - React then compares the current and previous versions of the virtual DOM.
+   - It identifies the specific nodes that need updating.
+   - Only these nodes(tags) are updated in the real browser DOM, making it efficient.
+
+5. Update Phase:
+   - React applies the necessary changes to the actual DOM to bring it in sync with the virtual   
+     DOM.
+   - It updates only the parts of the DOM that have changed, minimizing unnecessary re-renders  
+     and improving performance.
+
+
+Note : 
+
+  During this process, React uses various algorithms and techniques to optimize the comparison   
+  and update process, such as the virtual DOM diffing algorithm.
+
+
+                             --- RENDERING OF REACT APPLICATION ---
+   ______________        _______________         _______________       _____________________ 
+   |   Actual   | ---->  | Virtual DOM | ----->  | real/Browser| ----->|     Re-Render      |
+   |__ changes__| ---->  |____Updates__| ----->  |_____DOM_____| ----->|_perticular changes_|  
+ 
+                               
+
+ 6. REact and React DOM:
+     • The actual updating of the browser's DOM isn't done by React itself.
+     • It's handled by a companion library called react-dom.
+
+ 7. Root Element:
+     • The root div acts as a container for the React app.
+     • The script tag is where the React app starts executing.
+     • If you check main.tsx, the component tree is rendered inside this root element.
+
+ 8. Strict Mode Component (working like compiler):
+     • It's a special component in React.
+     • Doesn't have a visual representation.
+     • Its purpose is to spot potential issues in your React app.
+
+ 9. Platform Independence:
+     • React's design allows it to be platform-agnostic.
+     • While react-dom helps build web Uls using React, React Native can be used to craft mobile  
+       app Uls.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
